@@ -1,0 +1,30 @@
+{% extends 'ressources/layout/ressources_main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-body">
+        
+            <center>
+
+
+            <p>Voulez-vous vraiment supprimer {{ meetingTime }} ?</p>
+            <form action=" {%  url 'delete_meetingTime' meetingTime.id %} " method="POST">
+
+                {% csrf_token %}
+                <a  class="btn btn-warning" href="{% url 'index' %} ">Annuler</a>
+                <input class="btn btn-danger " type="submit" name="Confirmer">
+
+            </form>
+
+             </center>
+        </div>
+    </div>
+</div>    
+
+    
+
+{% endblock %}

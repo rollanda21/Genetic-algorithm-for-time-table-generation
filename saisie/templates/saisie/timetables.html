@@ -1,0 +1,44 @@
+{% extends 'saisie/layout/saisie_main.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        
+        <hr>
+        <div class="card card-body">
+            <a href="{% url 'create_timetable' %}" class="btn btn-primary btn-sm btn-block">Nouvel emploi du temps</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Semestre</th>
+                    <th>Statut</th>
+                    
+                </tr>
+
+                {%  for timetable in timetables %}
+                    <tr>
+                        <td> {{timetable.semester}} </td>
+                        <td> {{timetable.status}} </td>
+                        
+                        <td><a class="btn btn-warning" href="{% url  'update_update_time' room.id %}">Modifier</a></td>
+                        <td><a class="btn btn-danger" href="{% url  'delete_room' room.id %}">Supprimer</a></td>
+                    </tr>
+
+                {%  endfor %}
+
+        
+            </table>
+        </div>
+
+        
+    </div>
+
+    <div class="col-md-3">
+        <h3>Importer via excel</h3>
+        <hr>
+        <div class="card card-body">
+            <a href="#" class="btn btn-primary btn-sm btn-block">Importer CSV</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

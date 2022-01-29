@@ -1,0 +1,98 @@
+
+{% extends 'saisie/layout/saisie_main.html' %}
+{%  load static %}
+
+{% block content %}
+
+
+
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">Configuration</h1>
+	
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+	  <div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary"><a href="{% url 'create_header' %}">Ajouter une</a></h6>
+	  </div>
+	  <div class="card-body">
+		<div class="table-responsive">
+		  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Semestre</th>
+					<th>Activité</th>
+					<th>Année académique</th>
+					<th>Niveaux</th>
+					
+					<th>choisir</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Semestre</th>
+					<th>Activité</th>
+					<th>Année académique</th>
+					<th>Niveaux</th>
+					
+					<th>choisir</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				{%  for header in headers %}
+                    <tr>
+                        <td> {{header.semester}} </td>
+						<td> {{header.activity}} </td>
+						<td> {{header.academic_year}} </td>
+						<td>
+							{%  for level in header.levels.all %}
+							{{level}}
+							<br>
+							{%  endfor %}
+					    </td>
+						
+						<td><a class="btn btn-primary" href="{% url  'choose_header' header.id %}">Choisir</a></td>
+                        <td><a class="btn btn-warning" href="#"><i class="fas fa-exclamation-triangle"></i></a></td>
+                        <td><a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+
+                {%  endfor %}
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	</div>
+
+  </div>
+
+<!-- /.container-fluid -->
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

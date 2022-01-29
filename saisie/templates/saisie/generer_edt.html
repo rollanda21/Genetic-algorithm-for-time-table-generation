@@ -1,0 +1,72 @@
+{% extends 'saisie/layout/saisie_main.html' %}
+
+{% block content %}
+
+
+
+
+
+<p>etat: {{timeTable.status}} </p>
+
+<center>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-body">
+      <form action="" method="get">
+
+        
+
+
+
+        <button class="btn btn-primary" type="submit">Filtrer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    
+    
+    <div class="card-body card">
+      
+      <a href="{% url 'send_mail' %}" class="btn btn-primary btn-sm btn-block">Notifier les enseignants par mail</a>
+      
+    </div>
+  </div>
+</div>
+</center>
+<hr>
+
+
+
+<center>
+  
+
+<p>  {{timeTable.status}} </p>
+<p>  {{timeTable.semester}} </p>
+
+
+  
+  
+  <table>
+
+    
+      {% for class in timeTable.classes.all %}              
+       
+                    <tr>
+                        <th>{{class.dept}}</th>
+                        <th>{{class.course}}</th>
+                        <th>{{class.room}}</th>
+                        <th>{{class.instructor}}</th>
+                        <th>{{class.meetingTime}}</th>
+                    
+                    </tr>   
+                                    
+              
+        {% endfor %}
+  </table>
+  
+-->
+</center>
+
+
+{% endblock %}

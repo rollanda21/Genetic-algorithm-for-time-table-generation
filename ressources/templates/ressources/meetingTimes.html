@@ -1,0 +1,47 @@
+{% extends 'ressources/layout/ressources_main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row">
+    <hr>
+    <div class="col-md-6">
+        
+        <div class="card card-body">
+            <a href="{% url 'create_meetingTime' %}" class="btn btn-primary btn-sm btn-block">Ajouter une plage horaire</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Jour</th>
+                    <th>Plage</th>
+                    
+                    <th>Modifier</th>
+                    
+                </tr>
+
+                {%  for meetingTime in meetingTimes %}
+                    <tr>
+                        <td> {{meetingTime.day}} </td>
+                        <td> {{meetingTime.time}} </td>
+                        
+                        <td><a href="{% url  'update_meetingTime' meetingTime.id %}">Modifier</a></td>
+						
+                        
+                        
+                    </tr>
+
+                {%  endfor %}
+
+        
+            </table>
+        </div>
+
+    
+        
+    </div>
+
+    
+
+</div>
+
+
+{% endblock %}

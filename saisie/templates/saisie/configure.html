@@ -1,0 +1,31 @@
+
+{% extends 'saisie/layout/saisie_main.html' %}
+
+{% block content %}
+
+
+<!-- ***************************************Bloc nouveau******************************************************* -->
+<div class="row">
+
+	<div class="col-md-6">
+
+		<div class="card card-body">
+			<a href="{% url 'create_timetable' %}" class="btn btn-primary btn-sm btn-block">Nouveau</a>
+			
+		</div>
+
+	</div>
+
+	<div class="col-md-6">
+
+		<div class="card card-body">
+			<a href="{% url 'available_ressources' %}" class="btn btn-primary btn-sm btn-block">Voir les ressources disponibles</a>
+			
+		</div>
+
+	</div>
+</div>
+
+
+
+	{%  endblock %}

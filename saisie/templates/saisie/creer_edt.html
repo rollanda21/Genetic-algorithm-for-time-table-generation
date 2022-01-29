@@ -1,0 +1,19 @@
+{% extends 'saisie/layout/saisie_main.html' %}
+
+{% block content %}
+<h1>EDT cree </h1>
+<table class="table2">
+	
+	{% for class in classes %}
+	  
+	  <tr>
+		<th>{{class.dept}}</th>
+		
+	  </tr>
+	  
+	{% endfor %}
+  </table>
+
+
+
+{% endblock %}

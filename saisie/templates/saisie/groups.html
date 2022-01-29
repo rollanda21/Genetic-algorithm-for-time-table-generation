@@ -1,0 +1,110 @@
+
+{% extends 'saisie/layout/saisie_main.html' %}
+{%  load static %}
+
+{% block content %}
+
+
+
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">Tous les groupes par classe</h1>
+	
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+	  <div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary"><a href="{% url 'create_group' %}">Nouveau groupe</a></h6>
+	  </div>
+	  <div class="card-body">
+		<div class="table-responsive">
+		  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<thead>
+				<tr>
+                    <th>Classe  </th>
+                    <th>Effectif Total</th>
+					<th>Liste des groupes</th>
+					
+					
+					
+				</tr>
+			</thead>
+			<tfoot>
+				
+			</tfoot>
+
+			
+			<tbody>
+				{%  for department in departments %}
+						<tr>
+							<td> {{department.name}} ({{department.group_set.all.count}}  groupes)  </td>
+							<td> {{department.size}} </td>
+
+							<td>
+								<table>
+									<tr>
+										<th>Nom du groupe</th>
+										<th>Activité</th>
+										<th>Effectif</th>
+										<th>Modifier</th>
+										<th>Supprimer</th>
+
+									</tr>
+
+									{% for group in department.group_set.all %}
+									
+									<tr>
+										<td>{{group.name}} </td>
+										<td>{{group.activity}} </td>
+										<td>{{group.size}} </td>
+										<td><a class="btn btn-warning" href="#"><i class="fas fa-exclamation-triangle"></i></a></td>
+										<td><a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a></td>
+									</tr>
+									
+									{%  endfor %}
+								</table>
+
+						    </td>
+
+							
+							
+						</tr>
+	
+					{%  endfor %}
+			
+			</tbody>
+		  </table>
+
+		  
+		</div>
+	  </div>
+	</div>
+
+  </div>
+
+<!-- /.container-fluid -->
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

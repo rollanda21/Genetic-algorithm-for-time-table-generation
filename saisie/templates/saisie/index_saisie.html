@@ -1,0 +1,80 @@
+{% extends 'saisie/layout/saisie_main.html' %}
+
+{% block content %}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800"> Tous les emplois du temps   </h1>
+	
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+	  <div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary"><a href="{% url 'configure' %}" class="btn btn-primary btn-sm btn-block">Nouvel emploi du temps</a></h6>
+	  </div>
+	  <div class="card-body">
+		<div class="table-responsive">
+		  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Semestre</th>
+                        <th>Date de création</th>
+						<th>Etat</th>
+						<th>Consulter</th>				
+				</tr>
+			</thead>
+			<tfoot>
+				
+			</tfoot>
+			<tbody>
+				{%  for timetable in timetables %}
+                        <tr>
+                            <td> {{timetable.semester}} </td>
+                            <td> {{timetable.date_created}} </td>
+							<td>{{timetable.status}}</td>
+							<td><a class="btn btn-primary" href="{% url  'print_timetable' timetable.id %}"><i class="fas fa-eye"></i></a></td>
+							<!-- <td><a class="btn btn-primary" href="{% url  'submit_timetable' timetable.id %}">Soumettre</a></td> -->
+                            
+                            
+                        </tr>
+
+                    {%  endfor %}
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	</div>
+
+  </div>
+
+<!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

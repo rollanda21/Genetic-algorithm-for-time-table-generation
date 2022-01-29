@@ -1,0 +1,71 @@
+
+{% extends 'ressources/layout/ressources_main.html' %}
+{%  load static %}
+
+{% block content %}
+
+
+
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">Enseignants  ( {{total_instructors}} ) </h1>
+	
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+	  <div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary"><a href="{% url 'create_instructor' %}">Ajouter un enseignant</a></h6>
+	  </div>
+	  <div class="card-body">
+		<div class="table-responsive">
+		  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>email</th>
+					<th>Téléphone</th>
+					
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Nom</th>
+					<th>email</th>
+					<th>Téléphone</th>
+					
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				{%  for instructor in instructors %}
+				<tr>
+					<td> {{instructor.name}} </td>
+					<td> {{instructor.email}} </td>
+					<td> {{instructor.phone}} </td>
+					
+					<td><a class="btn btn-warning btn-circle" href="{% url  'update_instructor' instructor.id %}"><i class="fas fa-exclamation-triangle"></i></a></td>
+					<td><a class="btn btn-danger btn-circle" href="{% url  'delete_instructor' instructor.id %}"><i class="fas fa-trash"></i></a></td>
+				</tr>
+
+			{%  endfor %}
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	</div>
+
+  </div>
+
+<!-- /.container-fluid -->
+
+
+
+
+
+{% endblock %}

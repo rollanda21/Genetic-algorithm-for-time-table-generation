@@ -1,0 +1,718 @@
+{% extends 'requetes/layout/requetes_main.html' %}
+
+
+{% load  static  %}
+{% block content %}
+
+
+<div class="row">
+
+    
+
+  <center>
+
+    
+
+
+    {% for dept in depts %}      
+
+      
+      <div class="row">
+        <hr>
+        <h5> {{dept}} </h5> 
+      <table class="table-responsive-sm"> 
+
+        <tr>
+          <th>Horaires</th>
+          <th>Lundi</th>
+          <th>Mardi</th>
+          <th>Mercredi</th>
+          <th>Jeudi</th>
+          <th>Vendredi</th>
+          <th>Samedi</th>
+          <th>Dimanche</th>
+      
+      </tr>
+
+<!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Première ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+      <tr>
+        <th>7h-9h</th>         
+        
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}  
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "7h-9h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        
+        
+        
+
+      </tr>
+
+      <!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  deuxieme ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+      <tr>
+        <th>9h-11h</th>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          <br>
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "9h-11h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        
+        
+
+      </tr>
+      <!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  troisieme ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+      <tr>
+        <th>11h-13h</th>
+
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "11h-13h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+
+
+
+
+      </tr>
+
+
+      <!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  4e ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+      <tr>
+        <th>13h-15h</th>
+
+
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "13h-15h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+
+
+      </tr>
+
+      <!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  5e ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+      <tr>
+        <th>15h-17h</th>
+
+
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "15h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "15h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "115h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "15h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "15h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "15h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "15h-17h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+
+
+      </tr>
+
+      <!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  6e ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+      <tr>
+        <th>17h-19h</th>
+
+
+
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "17h-19h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+
+
+      </tr>
+
+      <!--  @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  7e ligne du tableau @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+      <tr>
+        <th>19h-21h</th>
+
+
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Lundi" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mardi" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Mercredi" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Jeudi" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Vendredi" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Samedi" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          {% for class in timetable.classes.all %}
+          {%  if  class.meetingTime.day == "Dimanche" and class.dept == dept and class.meetingTime.time == "19h-21h" %}
+          {{class.course}}
+          <br>
+          {{class.room}}
+          <br>
+          {{class.instructor}}
+          
+          {% endif %}
+          {% endfor %}
+        </td>
+
+
+      </tr>       
+  
+      </table>
+
+      {% endfor %}
+  
+
+
+      
+    
+
+
+
+    </center>
+  
+
+{% endblock %}

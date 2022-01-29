@@ -1,0 +1,149 @@
+
+{% extends 'saisie/layout/saisie_main.html' %}
+
+{% block content %}
+
+
+<!-- ***************************************Bloc nouveau******************************************************* -->
+<div class="row">
+
+	<div class="col-md-6">
+
+		<div class="card card-body">
+			<a href="{% url 'create_timetable' %}" class="btn btn-primary btn-sm btn-block">Nouveau</a>
+			
+		</div>
+
+	</div>
+</div>
+
+
+<!-- *********************************Bloc enseignants******************************************************* -->
+<div class="row">
+
+	<!-- ******************************Enseignants disponibles *******************************************-->
+
+	
+	<div class="col-md-6">
+		
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Enseignants disponbles  ({{total_instructors}}) </h6>
+		  </div>
+		<hr>
+		<div class="card-body">
+			
+			  <table class="table table-bordered" width="50%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>email</th>
+						<th>Téléphone</th>
+						
+						<th>Modifier</th>
+						
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Nom</th>
+						<th>email</th>
+						<th>Téléphone</th>
+						
+						<th>Modifier</th>
+						
+					</tr>
+				</tfoot>
+				<tbody>
+					{%  for instructor in available_instructors %}
+					<tr>
+						<td> {{instructor.name}} </td>
+						<td> {{instructor.email}} </td>
+						<td> {{instructor.phone}} </td>
+						
+						<td><a class="btn btn-warning" href="{% url  'update_instructor' instructor.id %}"><i class="fas fa-exclamation-triangle"></i></a></td>
+						
+					</tr>
+	
+				{%  endfor %}
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		
+			
+			
+	
+
+
+
+
+	<!-- ************************** Salles disponibles *********************************************** -->
+	<div class="col-md-6">
+		
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Salles disponbles ({{total_rooms}}) </h6>
+		  </div>
+		<hr>
+		<div class="card-body">
+			
+			  <table class="table table-bordered"  width="50%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Capacité</th>
+						<th>Plages horaires disponibles</th>
+						<th>Modifier</th>
+						
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Nom</th>
+						<th>Capacité</th>
+						<th>Plages horaires disponibles</th>
+						<th>Modifier</th>
+						
+					</tr>
+				</tfoot>
+				<tbody>
+					{%  for room in rooms %}
+						<tr>
+							<td> {{room.name}} </td>
+							<td> {{room.capacity}} </td>
+
+							<td>
+								<table>
+									<tr>
+										<th>jour</th>
+										<th>Heure</th>
+									</tr>
+
+									{% for meeting_time in room.meeting_time.all %}
+									{% if meeting_time.status == "Libre" %}
+									<tr>
+										<td>{{meeting_time.day}} </td>
+										<td>{{meeting_time.time}}</td>
+										
+									</tr>
+									{%  endif %}
+									{%  endfor %}
+								</table>
+
+						    </td>
+
+							<td><a class="btn btn-warning" href="{% url  'update_room' room.id %}"><i class="fas fa-exclamation-triangle"></i></a></td>
+							
+						</tr>
+	
+					{%  endfor %}
+				</tbody>
+			  </table>
+			</div>
+		  </div>	
+</div>
+
+
+
+
+
+	{%  endblock %}

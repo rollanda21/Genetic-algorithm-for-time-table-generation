@@ -1,0 +1,92 @@
+<center>
+
+    <form action="" method="GET">
+
+      
+      {{myFilter.form}}
+
+
+      <button class="btn btn-primary" type="submit">Filtrer</button>
+    </form>
+     <div>
+      <hr>
+      <table>
+
+        
+          {% for class in timetable.classes.all %}              
+          
+                        <tr>
+                            <th>{{class.dept}}</th>
+                            <th>{{class.course}}</th>
+                            <th>{{class.room}}</th>
+                            <th>{{class.instructor}}</th>
+                            <th>{{class.meetingTime}}</th>
+                        
+                        </tr>   
+                                        
+                  
+            {% endfor %}
+      </table>
+    </div> 
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% for class in timetable.classes.all %}
+                        
+    
+<tr>
+
+
+  <th>{{class.meetingTime.time}}</th>
+    <th>{{class.dept}}</th>
+    <th>{{class.course}}</th>
+    <th>{{class.room}}</th>
+    <th>{{class.instructor}}</th>
+    
+
+</tr>   
+
+                
+    
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% for class in timetable.classes.all %}
+          {%  if class.dept == dept and class.meetingTime.time == '7h-9h' and class.meetingTime.day == 'Lundi' %}
+          {{class.course}}
+          {{class.room}}
+          {{class.instructor}}
+          {% endif %}
+          {% endfor %}

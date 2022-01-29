@@ -1,0 +1,14 @@
+{% extends 'ressources/layout/ressources_main.html' %}
+{% load static %}
+{% block content %}
+
+
+<form action="" method="POST">
+
+    {%  csrf_token %}
+     {{form}}
+    <input class="btn btn-primary" type="submit" name="valider">
+
+</form>
+
+{% endblock %}

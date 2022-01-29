@@ -1,0 +1,45 @@
+{% extends 'requetes/layout/requetes_main.html' %}
+
+{% load  static  %}
+{% block content %}
+<hr>
+
+<hr>
+
+<h2>Tous les emplois du temps actifs</h2>
+
+
+  <!-- ********************* Les emplois du temps actifs ***************************** -->
+  <div class="col-md-6">
+
+    <div class="card card-body">
+        <h4>Emplois du temps actifs</h4>
+        <table class="table table-sm">
+
+          <tr>
+            <th>Semestre</th>
+            <th>Date de création</th>
+            
+            
+        </tr>
+            
+
+            {%  for timetable in active_timetables %}
+                <tr>
+                    <td> {{timetable.semester}} </td>
+                    <td> {{timetable.date_created}} </td>
+                    <td><a class="btn btn-primary" href="{% url  'print_timetable' timetable.id  %}">Voir</a></td>                  
+                    
+                </tr>
+
+            {%  endfor %}
+
+    
+        </table>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
